@@ -1,0 +1,31 @@
+import requests
+import json
+
+#myapi: f5998a1d00dc460baac86299b17958e9
+
+
+
+def speak(str):
+    from win32com.client import Dispatch
+    
+    speak = Dispatch('SAPI.SpVoice')
+    speak.Speak(str)
+    
+if __name__== "__main__":
+    
+    api = input("Enter your APN: ")
+    url = f"https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey={api}"
+    news = requests.get(url).text                               #this news is in string format, now we suse json to make news string into dictionary so that we can play only the 'title' (print news to verify)
+    news_dict = json.loads(news)
+    
+    #'articles' must exist in the news site data for it to be found, else error
+    speak("Welcome. The top tech news headlines of today are: ")
+    news_articles = news_dict['articles']           #we need only articles
+    for article in news_articles:                              #to access only articles
+        print(article['title'])                                #to access only the title and not entire article
+        #speak(article['title'])
+    print(list(article['title']))
+    
+    
+     
+    
