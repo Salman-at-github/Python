@@ -10,7 +10,8 @@ for i in abc:
     lowerCase.append(i)
 for i in ABC:
     upperCase.append(i)
-    
+
+#TO FIND IF JUST ANY SPECIFIC CHAR TYPES EXIST 
 low = False
 upp = False
 num = False
@@ -25,29 +26,29 @@ for char in s:
         if n == char:
             num = True
 
-# alphaNumeric = False
-# justAlpha = False
-# justNumeric = False
-# justLower = False
-# justUpper = False
+alphaNumeric = False
+justAlpha = False
+justNumeric = False
+justLower = False
+justUpper = False
 
-# if low and upp and num or low and num or upp and num:
-#     alphaNumeric = True
-# print("Status is alphn: ",alphaNumeric)
-# if low and upp and not num:
-#     justAlpha = True
-# print("Status is jal: ",justAlpha)
-# if num and not low and not upp:
-#     justNumeric = True
-# print("Status is jnum : ",justNumeric)
+if low and upp and num or low and num or upp and num:
+    alphaNumeric = True
+print("Status is alphn: ",alphaNumeric)
+if low and upp and not num:
+    justAlpha = True
+print("Status is jal: ",justAlpha)
+if num and not low and not upp:
+    justNumeric = True
+print("Status is jnum : ",justNumeric)
     
-# if low and not upp and not num:
-#     justLower = True
-# print("Status is:jlow ",justLower)
+if low and not upp and not num:
+    justLower = True
+print("Status is:jlow ",justLower)
     
-# if upp and not low and not num:
-#     justUpper = True
-# print("Status is:jupp ",justUpper)
+if upp and not low and not num:
+    justUpper = True
+print("Status is:jupp ",justUpper)
 
 # HACKERRANK PROBLEM (SEE IF GIVEN STRING CONTAINS ANY CHAR OF ALNUM,APHA,ISDIGIT,ISUPPER,ISLOWER)
 fline = False
