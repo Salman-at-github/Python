@@ -1,1 +1,1 @@
-float
+"{:>" + str(width) + numSystem + "}"

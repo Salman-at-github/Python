@@ -1,0 +1,2 @@
+#In Recursion, always set the limit first and then the recur call, else it's going to cause errors. eg,. when creating a func, set the limits with CONDITIONS and only after that call the func inside func. 
+#Generally recursion is used to break down a bigger problem into smaller ones and get it solved based on the limitations set.
