@@ -2,15 +2,6 @@
 
 def reverseList(arr,startIndice, endIndice):
     while startIndice < endIndice:
-
-        # arr[startIndice] = arr[endIndice] #swap first to last element
-        # arr[endIndice] = arr[startIndice] #swap last element to first
-#  temp = arr[startIndice]  # store the original value
-#         arr[startIndice] = arr[endIndice]  
-#         arr[endIndice] = temp
-
-        #now repeat one by one, increase start and end
-
         arr[startIndice], arr[endIndice] = arr[endIndice], arr[startIndice] #this swaps the values without overwriting them unlike aobve two lines we can use temp to use the above two lins instead: 
         startIndice+=1
         endIndice-=1
