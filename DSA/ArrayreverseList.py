@@ -1,4 +1,4 @@
-#1                                                  Iterative Method(*2)
+#1                                                  Iterative Method O(n)
 
 def reverseList(arr,startIndice, endIndice):
     while startIndice < endIndice:
@@ -23,7 +23,7 @@ def reverseList(arr,startIndice, endIndice):
 # print(result)
 
 
-#                                                       Recursion (*1)
+#                                                       Recursion O(n)
 def reverseArr(arr, startI,endI ):
     if startI >= endI: #SET LIMIT to RECURSION
         return arr
@@ -37,7 +37,7 @@ def reverseArr(arr, startI,endI ):
 # print(b)
 
 
-#                                                           List Slicing(*3)
+#                                                           List Slicing O(n)
 
 def reverseArrLS(arr):
     return arr[::-1]
