@@ -7,30 +7,34 @@
 
 #                                         O(log n)
 
-def findIndex(nums, target):
+def getIndexInSortedRotatedArray(arr, target):
     startIndex = 0
-    endIndex = len(nums) - 1
-
+    endIndex = len(arr) - 1
     while startIndex <= endIndex:
-        mid = (startIndex + endIndex) // 2
-
-        if nums[mid] == target:
+        mid = (startIndex+endIndex)//2
+        if arr[mid] == target:
             return mid
-
-        if nums[startIndex] <= nums[mid]:  # left half is sorted
-            if nums[startIndex] <= target <= nums[mid]:  # Target is within the left half
+        if arr[startIndex] <= arr[mid]: #if left is sorted
+            if arr[startIndex] <= target <= arr[mid]: #if target lies in left array, decrease size towards left from end until array becomes small
                 endIndex = mid - 1
-            else:
+            else: #if not in left, then increase mid towards right so that it can be used as start index
                 startIndex = mid + 1
-        else:  # right half is sorted
-            if nums[mid] <= target <= nums[endIndex]:  # Target is within the right half
+        else: #else right array is sorted if left isn'target
+            if arr[mid] <= target <= arr[endIndex]: #if element is in right array, decrease start index towards right until target found
                 startIndex = mid + 1
-            else:
-                endIndex = mid - 1
+            else: #target not in right, need to decrease end to -ve so that left array becomes accessible
+                endIndex = mid -1
+    return -1 #if none of the above conditions are met, return -1
 
-    return -1
+print(getIndexInSortedRotatedArray([4,5,0,1,2,3],5))
 
-print(findIndex([4,5,0,1,2,3],3)) 
+
+
+
+
+
+
+
 
 
 # The findIndex function takes in two parameters: nums (the rotated sorted array) and target (the element we want to find the index of).
