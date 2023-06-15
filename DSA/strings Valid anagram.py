@@ -12,39 +12,37 @@ def ValidAnagram(string,targetString):
 
     return True
 
-print(ValidAnagram("Bruh","hubr"))
+# print(ValidAnagram("Bruh","hubr"))
 #Principle: convert both strings into list, then search the targetstrlist elements in mainstrList, if all are found then return true else false
 #Result:  your algorithm does not take into account the count of each character. In an anagram, the counts of characters in both strings should be the same. Your algorithm only checks for the presence of characters, but it does not handle cases where characters occur multiple times or when the counts of characters are different. Therefore, your algorithm is not correctly solving the anagram problem.
 
 
 
 #                                   O(n)
-def isAnagram(s, t):
-    # Check if lengths are equal
-    if len(s) != len(t):
+def isAnagram(s,t):
+    if len(s) != len(t): #if both str lenght not same then its not an anagram
         return False
+    #create an array of 26 elements to store count of 26 alphabet chars
+    count = [0] *26
 
-    # Initialize count array
-    count = [0] * 26
-
-    # Iterate over characters of string s
+    #store the appearance of each char in Mainstr using ord to count array
     for char in s:
-        index = ord(char) - ord('a')
-        count[index] += 1
-
-    # Iterate over characters of string t
+        index = ord(char) - ord("a")
+        count[index]+=1
+    print(count)
+    #now for each similar char present in t, decrease the count value
     for char in t:
-        index = ord(char) - ord('a')
-        count[index] -= 1
+        index = ord(char) - ord("a")
 
-    # Check if all counts are zero
+        count[index]-=1
+    print(count)
+    #if any value != 0 in count then its not an anagram
     for value in count:
-        if value != 0:
+        if value!=0:
             return False
-
     return True
 
-
+print(isAnagram("bruh","hubr"))
 # Here's an explanation of each line in the updated  code:
 
 # ``` 
