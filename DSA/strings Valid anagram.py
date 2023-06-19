@@ -88,3 +88,5 @@ print(isAnagram("bruh","hubr"))
 # If all values in the `count` array are zero, it means that the counts of all letters are the same between `s` and `t`, so the function returns `True`, indicating that `t` is an anagram of `s`.
 
 # I hope this explanation clarifies the functionality of each line in the code!
+
+#Principle: First len of s = t. Create a matrix of 0*26 ele to store the presence of each alphabet, increase or decrease the value of the ele by 1 for every presence using index which is found using ord(char) - ord("a") that gives index 0 to 25. If char in mainstring, increase. If its in targetString, decrease. At last if all the ele are 0 in matrix, its an anagram. 
